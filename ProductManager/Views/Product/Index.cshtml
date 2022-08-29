@@ -1,0 +1,60 @@
+@model List<Product>;
+@{
+    ViewData["Title"] = "Product List";
+    var products = Model;
+    @* var categories = ViewBag.Categories; *@
+    var categories = ViewData["Categories"] as List<string>;
+}
+<h1>@ViewData["Title"]</h1>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Product Page</h1>
+    @* <ul>
+        @foreach (var category in categories)
+        {
+        <li>@category</li>
+        }
+        </ul> *@
+    <table class="table">
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quatity</th>
+            @* <th>Option</th> *@
+        </thead>
+        <tbody>
+            @foreach (var product in products)
+            {
+                <tr>
+                    <td>@product.Id</td>
+                    <td>@product.Name</td>
+                    <td>@product.Price</td>
+                    <td>@product.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@* <tr>
+    <td>1</td>
+    <td>Iphone</td>
+    <td>1000</td>
+    <td>50</td>
+    <td>Options</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>Nokia Lumia</td>
+    <td>100</td>
+    <td>69</td>
+    <td>Option2</td>
+    </tr>
+    <tr>
+    <td>3</td>
+    <td>Airpods</td>
+    <td>300</td>
+    <td>25</td>
+    <td>Option3</td>
+    </tr> *@
